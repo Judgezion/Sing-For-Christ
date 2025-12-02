@@ -1,0 +1,89 @@
+/* style.css - clean responsive styles */
+
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#0b5cff;
+  --muted:#6b7280;
+  --border:#e6e9ef;
+  --radius:10px;
+  --maxWidth:980px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+body{background:var(--bg);color:#111;line-height:1.4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+.container{
+  width:95%;
+  max-width:var(--maxWidth);
+  margin:36px auto;
+  padding:0 12px;
+}
+.title{font-size:1.6rem;margin:0 0 18px;text-align:center}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 18px rgba(19,24,32,0.06);
+  border:1px solid var(--border);
+}
+
+/* Form layout */
+form .field{margin-bottom:12px}
+label{display:block;font-weight:600;margin-bottom:6px;font-size:0.95rem}
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], input[type="search"], select, textarea {
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:transparent;
+  font-size:0.95rem;
+  outline:none;
+}
+textarea{resize:vertical}
+
+.row{display:flex;gap:12px}
+.field.small{flex:1}
+.field.small input, .field.small select{min-width:0}
+
+.actions{margin-top:10px}
+button{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  font-size:1rem;
+}
+button:hover{filter:brightness(.95)}
+button[disabled]{opacity:0.6;cursor:not-allowed}
+
+/* small text */
+.small{font-size:0.9rem}
+.muted{color:var(--muted)}
+
+.message{margin-top:12px;color:var(--muted)}
+
+/* Table */
+.table-wrap{overflow:auto;margin-top:8px}
+.registrations-table{width:100%;border-collapse:collapse}
+.registrations-table thead{background:linear-gradient(90deg,var(--accent),#2f6fff);color:white}
+.registrations-table th, .registrations-table td{padding:10px;border:1px solid #eef2f7;text-align:left;font-size:0.95rem}
+.registrations-table tbody tr:nth-child(even){background:#fbfdff}
+
+/* admin actions */
+.admin-actions{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+#searchInput{flex:1;padding:8px 10px;border-radius:8px;border:1px solid var(--border)}
+#refreshBtn,#exportBtn,#clearBtn{padding:8px 10px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
+
+/* responsiveness */
+@media (max-width:720px){
+  .row{flex-direction:column}
+  .title{font-size:1.3rem}
+  .container{margin:18px auto}
+}

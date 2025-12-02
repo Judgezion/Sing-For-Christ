@@ -1,0 +1,51 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — Registrations</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Admin — Registered Participants</h1>
+
+    <div class="card">
+      <div class="admin-actions">
+        <input id="searchInput" type="search" placeholder="Search by name, church, phone or category..." />
+        <button id="refreshBtn">Refresh</button>
+        <button id="exportBtn">Export CSV</button>
+        <button id="clearBtn" title="Clear table rows cache">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="registrationsTable" class="registrations-table">
+          <thead>
+            <tr>
+              <th>Full name</th>
+              <th>Age</th>
+              <th>DOB</th>
+              <th>Church</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Category</th>
+              <th>Notes</th>
+              <th>Registered at</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="adminMessage" class="message"></p>
+      </div>
+    </div>
+
+    <footer class="small muted">
+      <p>Tip: For production, protect this page with Firebase Auth or restrict Firestore rules.</p>
+    </footer>
+  </main>
+
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

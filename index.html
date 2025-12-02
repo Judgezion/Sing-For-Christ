@@ -1,0 +1,80 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Event Registration</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Sing For Christ</h1>
+
+    <form id="registrationForm" class="card" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="fullname">Full name</label>
+        <input id="fullname" name="fullname" type="text" required placeholder="Jane Doe" />
+      </div>
+
+      <div class="row">
+        <div class="field small">
+          <label for="age">Age (13–17)</label>
+          <input id="age" name="age" type="number" min="13" max="17" required placeholder="15" />
+        </div>
+
+        <div class="field small">
+          <label for="dob">Date of birth</label>
+          <input id="dob" name="dob" type="date" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="church">Church / Parish</label>
+        <input id="church" name="church" type="text" required placeholder="St. Mary's Parish" />
+      </div>
+
+      <div class="row">
+        <div class="field small">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" required placeholder="+2349159208452" />
+        </div>
+
+        <div class="field small">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="">-- Select a category --</option>
+          <option value="Song">Song</option>
+          <option value="Drumming">Drumming</option>
+          <option value="Poetry">Poetry</option>
+          <option value="Instrumental">Instrumental</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="notes" rows="3" placeholder="Anything we should know?"></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" type="submit">Register</button>
+      </div>
+
+      <p id="formMessage" class="message" aria-live="polite"></p>
+    </form>
+
+    <footer class="small muted">
+      <p>Have an account or want to view registrations? <a href="admin.html">Go to admin dashboard</a></p>
+    </footer>
+  </main>
+  <script type="module" src="./firebase.js"></script>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
