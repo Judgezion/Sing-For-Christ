@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 🔐 SIMPLE PASSWORD LOCK -->
+  <script>
+    const pass = prompt("Enter Admin Password:");
+    if (pass !== "Singforchrist2025") {
+      alert("Access Denied!");
+      window.location.href = "index.html";
+    }
+  </script>
   <main class="container">
     <h1 class="title">Admin — Registered Participants</h1>
 
